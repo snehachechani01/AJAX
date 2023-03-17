@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+            />
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="index.js"></script>
+        <title>Insert Data</title>
+    </head>
+
+    <body>
+        <div class="main">
+            <h1 style="text-align: center;">Enter Table Data</h1>
+            <div class="container">
+                <form id="myform" method="POST">
+
+
+                    <label for="title">Title</label>
+                    <input id="title" type="text" id="title" name="title"
+                        placeholder="Title.." required>
+
+                    <label for="rating">Rating (Out of 10)</label>
+                    <input type="number" id="rating" id="rating" min="1"
+                        max="10" name="rating"
+                        placeholder="Rating.." required>
+
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+
+                <div>
+                    <h1> View Data</h1>
+                    <table id="mytable" border="1">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title
+                                    <div class="positionarrow">
+                                        <input
+                                        class="material-icons up"
+                                        type="submit"
+                                        name="submit"
+                                        value="&#xe316;"
+                                        />
+                                    <input                                  
+                                            class="material-icons down"
+                                            type="submit"
+                                            name="submit"
+                                            value="&#xe313;"
+                                            />
+                                    </div>
+                                </th>
+                                <th>Rating
+                                    <div class="positionarrow">
+                                        <input
+                                            class="material-icons uprating"
+                                            type="submit"
+                                            name="submit"
+                                            value="&#xe316;"
+                                            />
+                                        <input
+                                            class="material-icons downrating"
+                                            type="submit"
+                                            name="submit"
+                                            value="&#xe313;"
+                                            />
+                                    </div>
+                                </th>
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

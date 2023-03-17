@@ -1,0 +1,28 @@
+body{
+    width:100%;
+  
+}
+table {
+  /* border-collapse: collapse; */
+  margin: 20px 0;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #555;
+  color: rgb(182, 164, 164);
+}
+
+tr:nth-child(even) {
+  background-color: #e7c6c6;
+}
+
+#delete{
+    background-color: green;
+}

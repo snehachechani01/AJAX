@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorting Keywords</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#sort-btn").click(function(){
+				$.ajax({
+					type: "POST",
+					url: "Question2.php",
+					dataType: "html",
+					success: function(data){
+						$("#result").html(data);
+					}
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>Keywords</h2>
+	<button id="sort-btn">Sort in Ascending Order</button>
+	<div id="result"></div>
+</body>
+</html>
