@@ -1,0 +1,102 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    width:100%;
+    
+  }
+  
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  Form styles 
+  .form {
+    margin-bottom: 30px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  input[type="submit"] {
+    background-color: #538a53;
+    color: #d65050;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #64ab6c;
+  }
+  
+   Table styles /
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #91a892;
+    color: #fff;
+  }
+  
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  td:last-child {
+    text-align: center;
+  }
+  
+  .edit {
+    color: #91acc3;
+    cursor: pointer;
+  }
+  
+  .delete {
+    color: #e8a5a0;
+    cursor: pointer;
+  }
+  

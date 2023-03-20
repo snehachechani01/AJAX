@@ -35,7 +35,7 @@ $(document).ready(function () {
                     $('#title').val('');
                     $('#rating').val('');
                 }
-                $('.deleteBtn').on('click', function () {
+                $('.deleteBtn').on('click', function () { console.log(111);
                     if (confirm('Are you sure you want to delete this item?')) {
                     var id = $(this).data("id");
                     var row = $(this).closest("tr");
@@ -60,7 +60,7 @@ $(document).ready(function () {
     })
 })
 $(document).ready(function () {
-    $('.up').on('click', function () {
+    $('.up').on('click', function () { 
       sortTable(1, true)
     })
     $('.down').on('click', function () {
