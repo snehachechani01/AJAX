@@ -32,26 +32,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
-    $sql_select = "SELECT * FROM Post";
-    $result = $conn->query($sql_select);
+    
+ 
+$stmt = $conn->prepare("INSERT INTO Post (userid,Title, Description) 
+VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $userid, $Title, $Description);
+if ($stmt->execute()) {
+$stmt->close();
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
+$stmt_select = $conn->prepare("SELECT * FROM Post");
+if ($stmt_select->execute()) {
+$result = $stmt_select->get_result();
 
-            $id = $row['id'];
-            $userid = $row["userid"];
-            $Title = $row["Title"];
-            $Description = $row["Description"];
+if ($result->num_rows > 0) {
+while ($row = $result->fetch_assoc()) {
 
-            $return_arr[] = array(
-                "id" => $id,
-              "userid"=>$userid,
-                "Title" => $Title,
-                "Description" => $Description
-            );
-        }
-        echo json_encode($return_arr);
-    } else {
-        echo "0 results";
-    }
+$id = $row['id'];
+$userId = $row['userid'];
+$title = $row["Title"];
+$description = $row["Description"];
+
+$return_arr[] = array(
+"id" => $id,
+"userid" => $userId,
+"Title" => $title,
+"Description" => $description
+);
+}
+echo json_encode($return_arr);
+} else {
+echo "0 results";
+}
+
+$stmt_select->close();
+} else {
+echo "Error selecting posts: " . $conn->error;
+}
+
+} else {
+echo "Error inserting post: " . $conn->error;
+$stmt->close();
+}
 }

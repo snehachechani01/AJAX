@@ -56,15 +56,19 @@ $(document).ready(function () {
             var id = $(this).data("id");
             sessionStorage.setItem("id", id);
             window.location.href = 'edit.html';
-            
-            
-            
-        });
-
-      }
+          });
+        }
       });
-      
-  
       event.preventDefault();
     });
 });
+
+       
+    
+            
+            
+            
+      
+      
+  
+     

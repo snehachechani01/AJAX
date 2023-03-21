@@ -24,9 +24,7 @@ $(document).ready(function () {
 
                 }
             }
-            // error: function (xhr, status, error) {
-            //     alert("failed" + xhr + status + error);
-            // }
+          
 
         });
 
