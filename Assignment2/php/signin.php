@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-    $sql = "INSERT INTO post (first_name, last_name, email, password)
+    $sql = "INSERT INTO Registration (first_name, last_name, email, password)
 VALUES ('$firstName', '$lastName', '$email', '$password')";
     mysqli_query($conn, $sql);
 
