@@ -21,15 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     
 
-    $sql = "INSERT INTO Post (userid,Title, Description) 
-    VALUES ('$userid','$Title', '$Description')";
 
-
-    if ($conn->query($sql) === TRUE) {
-        // echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
 
 
     
