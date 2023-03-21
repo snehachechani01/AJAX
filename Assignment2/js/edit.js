@@ -12,7 +12,7 @@ $(document).ready(function () {
 
         $.ajax({
            
-            url: "edit.php",
+            url: "php/edit.php",
             type: "POST",
             data: formData,
             dataType: "JSON",
@@ -20,7 +20,7 @@ $(document).ready(function () {
             success: function (response) {
                 if (response[0]['message']) {
                     alert(response[0]['message']);
-                    window.location.href = 'view.html';
+                    window.location.href = 'modify.html';
 
                 }
             }

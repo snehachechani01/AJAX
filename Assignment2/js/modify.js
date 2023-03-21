@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $.ajax({
       type: "GET",
-      url: "modify.php", 
+      url: "php/modify.php", 
       dataType: "json",
       success: function(response) {
         $("#mytable tbody").empty();

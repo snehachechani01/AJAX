@@ -10,7 +10,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: 'signin.php',
+            url: 'php/signin.php',
             data: formData,
             dataType: 'json',
             encode: true,
