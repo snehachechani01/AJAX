@@ -30,29 +30,37 @@ $(document).ready(function () {
 
 
       }
+  
       $(".deleteBtn").on("click", function () {
         var id = $(this).data("id");
         var row = $(this).closest("tr");
-        $.ajax({
-          type: "POST",
-          url: "php/delete.php",
-          data: { id: id },
-          success: function () {
+        if (confirm("Are you sure to delete")) {
 
-            row.remove();
-          }
-        });
+          $.ajax({
+            type: "POST",
+            url: "php/delete.php",
+            data: { id: id },
+            success: function () {
+
+              row.remove();
+            }
+          });
+        }
       });
+
       $(".updateeBtn").on("click", function () {
+        if (confirm("Do you really want  to Update")) {
+
         var id = $(this).data("id");
         sessionStorage.setItem("id", id);
         window.location.href = 'edit.html';
-        
-        
-        
-    });
+        }
+     
 
-    }, error: function (xhr, status, error) {
+    });
+  
+
+  }, error: function (xhr, status, error) {
       console.log("Error:", error);
     }
 
