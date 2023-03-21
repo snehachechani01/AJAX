@@ -3,21 +3,38 @@
 include 'connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-$firstName = $_POST['fname'];
-$lastName = $_POST['lname'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+    $firstName = $_POST['fname'];
+    $lastName = $_POST['lname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-// Insert the user data into the database
-$sql = "INSERT INTO Registration (first_name, last_name, email, password) 
+
+    $query = "SELECT `email` FROM Registration";
+    $result = $conn->query($query);
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
+    foreach ($rows as $row) {
+        if ($row["email"] == $email)
+        {
+            $return_arr[] = array(
+                "message" => "Email already exists",
+            );
+            echo json_encode($return_arr);
+            
+            exit;
+        }
+    }
+
+
+
+    $sql = "INSERT INTO post (first_name, last_name, email, password)
 VALUES ('$firstName', '$lastName', '$email', '$password')";
-mysqli_query($conn, $sql);
+    mysqli_query($conn, $sql);
 
-$return_arr[] = array(
-    "sucess" => true,
-    "message" => "Registered successfully",
-);
+    $return_arr[] = array(
+        "success" => true,
+        "message" => "Registered successfully",
+    );
 
-echo json_encode($return_arr);
+    echo json_encode($return_arr);
 
 }
