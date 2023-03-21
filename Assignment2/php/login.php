@@ -11,11 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "SELECT `email`,`password` FROM Registration";
     $result = $conn->query($query);
 
-    if ($result === false) {
-        // display any database errors
-        echo 'Error: ' . mysqli_error($conn);
-        exit;
-    }
+  
 
     // fetch all rows into an array
     $rows = $result->fetch_all(MYSQLI_ASSOC);
@@ -28,15 +24,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo json_encode($return_arr);
             die();
         } else {
-            echo '<script>alert("Invalid password"); window.location.href = "index.html";</script>';
+
+         $return_arr[] = array(
+                "message" => "Not valid Password",
+            );
+            echo json_encode($return_arr);
+            
             exit;
         }
     } else {
-        echo '<script>alert("Invalid Username"); window.location.href = "index.html";</script>';
+        $return_arr[] = array(
+            "message" => "Not valid Email",
+        );
+        echo json_encode($return_arr);
+        
         exit;
+        
     }
 }
 
+ 
 function checkpassword($rows, $password)
 {
     foreach ($rows as $row) {

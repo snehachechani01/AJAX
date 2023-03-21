@@ -14,7 +14,7 @@ $(document).ready(function() {
             data: formData,
             dataType: 'json',
             encode: true,
-success: function(response) {
+            success: function(response) {
                 console.log(response);
                 alert(response[0].message);
                 if(response){

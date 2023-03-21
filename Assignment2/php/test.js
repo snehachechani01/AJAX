@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $('#login').submit(function(event) { // changed selector to #login
+$(document).ready(function () {
+    $('#login').submit(function (event) {
   
       var formloginData = {
         email: $('#username').val(),
@@ -12,7 +12,7 @@ $(document).ready(function() {
         data: formloginData,
         dataType: 'json',
         encode: true,
-        success: function(response) {
+        success: function (response) {
           if (response[0]["success"]){
             window.location.href = "view.html";
           }
@@ -21,12 +21,10 @@ $(document).ready(function() {
           }
         
         },
-        
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
           console.log("Error:", error);
         }
       });
       event.preventDefault();
     });
   });
-  
