@@ -23,12 +23,6 @@ $(document).ready(function () {
           "<td><button class='updateeBtn' data-id='" + id + "'>Update</button></td>" +
           "</tr>";
         $('#mytable tbody').append(tr_str);
-    
-
-
-
-
-
       }
   
       $(".deleteBtn").on("click", function () {
@@ -66,3 +60,10 @@ $(document).ready(function () {
 
   });
 });
+    
+
+
+
+
+
+

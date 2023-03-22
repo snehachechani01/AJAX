@@ -22,10 +22,6 @@ $(document).ready(function () {
             alert('Password should be of minimum 8 characters and must contain a special character')
             return false
         }
-
-
-
-
         $.ajax({
             type: 'POST',
             url: 'php/signin.php',
@@ -96,4 +92,9 @@ $(document).ready(function () {
         event.preventDefault();
     });
 });
+
+
+
+
+
 
